@@ -16,7 +16,7 @@ import AccountsUIWrapper from './common/AccountWrapper';
 const useStyles = makeStyles(theme => ({
     root: {
       flexGrow: 1,
-      height: '40vh',
+      height: '45vh',
     //   backgroundImage: `url(${"../assets/landing.jpg"})`,
     //   backgroundSize: 'cover',
       backgroundPosition: 'center',
@@ -91,7 +91,10 @@ const useStyles = makeStyles(theme => ({
         fontSize: 30,
     },
     stepsP: {
-        fontSize: 20,
+        fontSize: 18,
+        paddingLeft: '20px',
+        paddingRight: '20px',
+        paddingTo: '10px'
     }
 }));
   
