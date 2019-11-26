@@ -1,153 +1,160 @@
-import React from 'react'
-// import {Link} from 'react-router-dom'
-import AppBar from '@material-ui/core/AppBar';
-import Button from '@material-ui/core/Button';
-import CameraIcon from '@material-ui/icons/PhotoCamera';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+import CardActions from '@material-ui/core/CardActions';
+import Button from '@material-ui/core/Button';
+import { red } from '@material-ui/core/colors';
+import MailOutlineOutlinedIcon from '@material-ui/icons/MailOutlineOutlined';
+import PaymentOutlinedIcon from '@material-ui/icons/PaymentOutlined';
+import NotificationsActiveOutlinedIcon from '@material-ui/icons/NotificationsActiveOutlined';
 
-function Copyright() {
-    return (
-      <Typography variant="body2" color="textSecondary" align="center">
-        {'Copyright © '}
-        <Link color="inherit" href="https://material-ui.com/">
-          Your Website
-        </Link>{' '}
-        {new Date().getFullYear()}
-        {'.'}
-      </Typography>
-    );
-  }
-  
-  const useStyles = makeStyles(theme => ({
-    icon: {
-      marginRight: theme.spacing(2),
+
+const useStyles = makeStyles(theme => ({
+    root: {
+      flexGrow: 1,
+      height: '40vh',
+    //   backgroundImage: `url(${"../assets/landing.jpg"})`,
+    //   backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      background: 'linear-gradient(90deg, rgba(0,160,232,0.8) 0%, rgba(178,150,255,0.8) 50%, rgba(255,202,127,0.7959558823529411) 100%)',
+      color: 'white',
     },
-    heroContent: {
-      backgroundColor: theme.palette.background.paper,
-      padding: theme.spacing(8, 0, 6),
-    },
-    heroButtons: {
-      marginTop: theme.spacing(4),
-    },
-    cardGrid: {
-      paddingTop: theme.spacing(8),
-      paddingBottom: theme.spacing(8),
+    paper: {
+      padding: theme.spacing(3),
+      textAlign: 'center',
+      color: theme.palette.text.secondary,
     },
     card: {
-      height: '100%',
-      display: 'flex',
-      flexDirection: 'column',
+        width: 550,
+        height: 220,
+        backgroundColor: 'rgba(255, 255, 255, 0.3)',
+        marginTop: 30,
+        border: 'none',
     },
-    cardMedia: {
-      paddingTop: '56.25%', // 16:9
+    title: {
+        fontSize: 24,
+        textAlign: 'center',
     },
-    cardContent: {
-      flexGrow: 1,
+    h1: {
+        textAlign: 'center',
     },
-    footer: {
-      backgroundColor: theme.palette.background.paper,
-      padding: theme.spacing(6),
-    },
-  }));
+    btnLoging: {
+        textAlign: 'center',
+        backgroundColor: '#c51162',
+        justifyContent: 'center !important',
+        width: 300,
+        color: 'white',
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    },
+    btnSingUp:{
+        textAlign: 'center',
+        backgroundColor: '#3f51b5',
+        justifyContent: 'center !important',
+        width: 300,
+        color: 'white',
+    },
+    cardactions: {
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    p: {
+        fontSize: 25,
+        textAlign: 'center',
+        marginTop: 10,
+    },
+    content: {
+        backgroundColor: "black",
+        height: '60vh',
+
+    },
+    h2: {
+        color: 'white',
+        textAlign: 'center',
+        paddingTop: 15,
+        fontSize: 40,
+    },
+    icon1:{
+        width: 80,
+        height: 80,
+        textAlign: 'center',
+        color: 'white',
+    },
+    steps: {
+        textAlign: "center",
+        color: 'white',
+    },
+    h3: {
+        fontSize: 30,
+    },
+    stepsP: {
+        fontSize: 20,
+    }
+  }));
+  
+
+
 
 export default function Landing(props){
     const classes = useStyles();
-
     return (
-        <React.Fragment>
-      <CssBaseline />
-      <AppBar position="relative">
-        <Toolbar>
-          <CameraIcon className={classes.icon} />
-          <Typography variant="h6" color="inherit" noWrap>
-            Album layout
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <main>
-        {/* Hero unit */}
-        <div className={classes.heroContent}>
-          <Container maxWidth="sm">
-            <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-              Album layout
-            </Typography>
-            <Typography variant="h5" align="center" color="textSecondary" paragraph>
-              Something short and leading about the collection below—its contents, the creator, etc.
-              Make it short and sweet, but not too short so folks don&apos;t simply skip over it
-              entirely.
-            </Typography>
-            <div className={classes.heroButtons}>
-              <Grid container spacing={2} justify="center">
-                <Grid item>
-                  <Button variant="contained" color="primary">
-                    Main call to action
-                  </Button>
+        <div>
+        <div className={classes.root}>
+            <Grid 
+            container 
+            spacing={2}
+            justify="center"
+            alignItems="center">
+                <Grid item xs={12} md={6} lg={6} >
+                    <h1 className={classes.h1}>ALERTA PARA LAS DONACIONES DE MERCADO PAGO</h1>
+                    <p className={classes.p}>Incrementa la interacción con los seguidores de tu Stream!</p>
                 </Grid>
-                <Grid item>
-                  <Button variant="outlined" color="primary">
-                    Secondary action
-                  </Button>
+                <Grid item xs={12} md={6} lg={6}>
+                    <Card className={classes.card}>
+                        <CardContent>
+                            <Typography className={classes.title} color="textSecondary" gutterBottom>
+                                ¿Sos Parte de la Comunidad?
+                            </Typography>
+                        </CardContent>
+                        <CardActions className={classes.cardactions}>
+                            <Button size="large" className={classes.btnSingUp}>Registrate Ya!</Button>
+                        </CardActions>
+                        <CardActions className={classes.cardactions}>
+                            <Button size="large" className={classes.btnLoging}>Ingresa</Button>
+                        </CardActions>
+                    </Card>
                 </Grid>
-              </Grid>
-            </div>
-          </Container>
+            </Grid>
         </div>
-        <Container className={classes.cardGrid} maxWidth="md">
-          {/* End hero unit */}
-          <Grid container spacing={4}>
-            {cards.map(card => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card className={classes.card}>
-                  <CardMedia
-                    className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
-                    title="Image title"
-                  />
-                  <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Heading
-                    </Typography>
-                    <Typography>
-                      This is a media card. You can use this section to describe the content.
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button size="small" color="primary">
-                      View
-                    </Button>
-                    <Button size="small" color="primary">
-                      Edit
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </main>
-      {/* Footer */}
-      <footer className={classes.footer}>
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
-        <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-          Something here to give the footer a purpose!
-        </Typography>
-        <Copyright />
-      </footer>
-      {/* End footer */}
-    </React.Fragment>
+        <div className={classes.content}>
+            <Grid container  justify="center" alignItems="center">
+                <Grid item xs={12} md={12} lg={12} >
+                    <h2 className={classes.h2}>¿Como Funciona?</h2>
+                </Grid>
+            </Grid>
+            <Grid container spacing={3} justify="center" alignItems="center">
+                <Grid item md={4} lg={4}  className={classes.steps}>
+                    <MailOutlineOutlinedIcon className={classes.icon1}/>
+                    <h3 className={classes.h3}>1°</h3>
+                    <h3 className={classes.h3}>Creamos la Donacion</h3>
+                    <p className={classes.stepsP}>El donador ingresará su nombre, monto y mensaje. Luego será redirigido a MercadoPago con un ticket a abonar</p>
+                </Grid>
+                <Grid item md={4} lg={4}  className={classes.steps}>
+                    <PaymentOutlinedIcon className={classes.icon1}/>
+                    <h3 className={classes.h3}>2°</h3>
+                    <h3 className={classes.h3}>Confirmamos el pago</h3>
+                    <p className={classes.stepsP}>Una vez abonado el ticket, MercadoPago nos avisa si la transacción fue exitosa (directa a tu cuenta)</p>
+                </Grid>
+                <Grid item md={4} lg={4}  className={classes.steps}>
+                    <NotificationsActiveOutlinedIcon className={classes.icon1}/>
+                    <h3 className={classes.h3}>3°</h3>
+                    <h3 className={classes.h3}>Alerta!</h3>
+                    <p className={classes.stepsP}>Creamos una alerta en StreamLabs o Streamelement, la cual sonará inmediatamente y contará para los Tops y Goals</p>
+                </Grid>
+            </Grid>
+        </div>
+        </div>
     )
 }
