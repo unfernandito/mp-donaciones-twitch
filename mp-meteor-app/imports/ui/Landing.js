@@ -6,11 +6,12 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
-import { red } from '@material-ui/core/colors';
+// import { red } from '@material-ui/core/colors';
 import MailOutlineOutlinedIcon from '@material-ui/icons/MailOutlineOutlined';
 import PaymentOutlinedIcon from '@material-ui/icons/PaymentOutlined';
 import NotificationsActiveOutlinedIcon from '@material-ui/icons/NotificationsActiveOutlined';
-
+import {browserHistory} from './App'
+import AccountsUIWrapper from './common/AccountWrapper';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -92,10 +93,9 @@ const useStyles = makeStyles(theme => ({
     stepsP: {
         fontSize: 20,
     }
-  }));
+}));
   
-
-
+const goTo = (route) => browserHistory.push(route)
 
 export default function Landing(props){
     const classes = useStyles();
@@ -119,11 +119,15 @@ export default function Landing(props){
                             </Typography>
                         </CardContent>
                         <CardActions className={classes.cardactions}>
-                            <Button size="large" className={classes.btnSingUp}>Registrate Ya!</Button>
+                            <Button size="large" onClick={() => goTo('/users/signup')} className={classes.btnSingUp}>Registrate Ya!</Button>
                         </CardActions>
                         <CardActions className={classes.cardactions}>
-                            <Button size="large" className={classes.btnLoging}>Ingresa</Button>
+                            <Button size="large" onClick={() => goTo('/users/login')} className={classes.btnLoging}>Ingresa</Button>
                         </CardActions>
+
+                        {/* <CardActions className={classes.cardactions}>
+                            <Button size="large" onClick={() => goTo('/dashboard')} className={classes.btnLoging}>DASHBOARD TEST - BORRAR</Button>
+                        </CardActions> */}
                     </Card>
                 </Grid>
             </Grid>

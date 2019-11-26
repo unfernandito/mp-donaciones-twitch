@@ -1,7 +1,11 @@
 import React from 'react'
+import DashboarLayout from '../common/DashboardLayout'
 
 export default function Authorizations(props){
     return (
-        <div>Autorizaciones</div>
+        <DashboarLayout 
+        title="Autorizaciones">
+            <h2>Autorizaciones</h2>
+        </DashboarLayout>
     )
 }

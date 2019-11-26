@@ -7,8 +7,10 @@ import Settings from './dashboard/Settings';
 import Account from './dashboard/Account';
 import NewDonation from './NewDonations';
 import {createBrowserHistory} from 'history'
+import Login from './users/Login'
+import SignUp from './users/SignUp'
 
-const browserHistory = createBrowserHistory()
+export const browserHistory = createBrowserHistory()
 
 const App = () => (
   <div>
@@ -16,14 +18,25 @@ const App = () => (
       <Switch>
         
         <Route path="/" exact component={Landing} />
+        
+        <Switch>
+          <Route path="/users/login" exact component={Login} />
+  
+          <Route path="/users/signup" component={SignUp} />
+        </Switch>
 
-        <Route path="/dashboard/" component={Donations} />
+        <Switch>
+          <Route path="/dashboard/" exact component={Donations} />
 
-        <Route path="/authorizations" component={Authorizations} />
+          <Route path="/dashboard/authorizations" component={Authorizations} />
 
-        <Route path="/account" component={Account} />
+          <Route path="/dashboard/account" component={Account} />
 
-        <Route path="/settings" component={Settings} />
+          <Route path="/dashboard/settings" component={Settings} />
+        </Switch>
+
+        
+        
 
         <Route path="/donations/new" component={NewDonation} />
       </Switch>
