@@ -18,12 +18,6 @@ const App = () => (
       <Switch>
         
         <Route path="/" exact component={Landing} />
-        
-        <Switch>
-          <Route path="/users/login" exact component={Login} />
-  
-          <Route path="/users/signup" component={SignUp} />
-        </Switch>
 
         <Switch>
           <Route path="/dashboard/" exact component={Donations} />
@@ -33,12 +27,13 @@ const App = () => (
           <Route path="/dashboard/account" component={Account} />
 
           <Route path="/dashboard/settings" component={Settings} />
-        </Switch>
+  
+          <Route path="/users/login"  component={Login} />
+  
+          <Route path="/users/signup" component={SignUp} />
 
-        
-        
-
-        <Route path="/donations/new" component={NewDonation} />
+          <Route path="/donations/new" component={NewDonation} />
+      </Switch>
       </Switch>
     </Router>
   </div>

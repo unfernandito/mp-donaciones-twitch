@@ -8,6 +8,8 @@ export default function SignUp(props){
         //     state='signUp'
         //     // token={params.token} // for the reset-password route
         // />
-        null
+        <div>
+            <h1>HOLA</h1>
+        </div>
     )
 }
